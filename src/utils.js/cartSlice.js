@@ -14,6 +14,7 @@ const cartSlice = createSlice({
         },
         removeItems: (state, action) => {
             state.items.pop();
+            
         }
     }
 });
