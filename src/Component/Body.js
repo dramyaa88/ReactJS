@@ -6,7 +6,7 @@ import Shimmer from "./Shimmer";
 import { filterData } from "../utils.js/helper";
 
 
-export const Body = ({user}) => {
+export const Body = () => {
     //const [restaurants, setRestaurants] = useState(restaurantList);
     const [allRestaurants, setAllRestaurants] = useState([]);
     const [filteredRestaurants, setFilteredRestaurantas] = useState([]);
@@ -59,7 +59,7 @@ export const Body = ({user}) => {
               {filteredRestaurants.map((restaurant) => {
                 return(
                     <Link to ={"/restaurant/"+restaurant.data.id} key={restaurant.data.id}>
-                 <RestaurantCard {...restaurant.data } user={user} />
+                 <RestaurantCard {...restaurant.data } />
                 </Link>
                 );
               })}

@@ -18,7 +18,7 @@ export const RestaurantCard = ({
             <h2 className="font-bold text-xl">{name}</h2>
             <h3>{cuisines.join(", ")}</h3>
             <h4>{lastMileTravelString}</h4>
-            <h4>{user.name}</h4>
+            <h4>{user.name} - {user.email}</h4>
         </div>
     );
 };

@@ -3,6 +3,7 @@ import Logo from "../assets/ReactJSImg.jpg";
 import { Link } from "react-router-dom";
 import useOnline from "../utils.js/useOnline";
 import UserContext from "../utils.js/UserContext";
+import { useSelector } from "react-redux";
 
 const Image1 = () => (
     <a href = "/">
@@ -16,6 +17,7 @@ export const Header = () => {
 
     const [isLoggedin, setIsLoggedIn] = useState(false);
     const {user} = useContext(UserContext);
+    const cartItems = useSelector(store => store.cart.items);
     const isOnline = useOnline();
     return (
         <div className="flex justify-between bg-pink-50 shadow-lg">
@@ -26,7 +28,7 @@ export const Header = () => {
             <Link to ="/about"><li className="px-2">About</li></Link>
             <Link to ="/contact"><li className="px-2">Contact</li></Link>
             <Link to ="/instamart"><li className="px-2">Instamart</li></Link>
-            <Link to = "/cart"><li className="px-2">Cart -4 items</li></Link>
+            <Link to ="/cart"><li className="px-2">Cart - {cartItems.length}</li></Link>
         </ul>
         </div>
         <h1 className="p-10 font-bold text-red-900">{user.name}</h1>

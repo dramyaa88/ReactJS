@@ -32,6 +32,7 @@ import Instamart from "./Component/Instamart";
 import UserContext from "./utils.js/UserContext";
 import { Provider } from "react-redux";
 import store from "./utils.js/store";
+import Cart from "./Component/Cart";
 
 
 //const Instamart = lazy(() =>import("./Component/instamart") )
@@ -39,23 +40,36 @@ import store from "./utils.js/store";
     //Component Composition - calling Func. comp. inside func. comp.
     const AppLayout = () => {
 
-        const [user, setUser] = useState({
+        const [modifiedUser, setModifiedUser] = useState({
             name: "Ramyaa",
             email: "ramyaa123@gmail.com",
         });
 
+        const [modifiedUser2, setModifiedUser2] = useState({
+            name: "Ramyaa Dhanasekaran",
+            email: "dramyaa307@gmail.com",
+        });
+        
 
         return (
             <Provider store ={store}>
             <UserContext.Provider 
                 value={{
-                    user:user,
+                    user:modifiedUser,
                 }}
             >
             <Header/>
             <Outlet />
-            <Footer/>
             </UserContext.Provider>
+            <UserContext.Provider 
+                value ={{
+                    user:modifiedUser2
+                }}
+            >
+                 <Footer />
+            </UserContext.Provider>
+           
+            
             </Provider>
         )
     }
@@ -68,10 +82,7 @@ import store from "./utils.js/store";
         children: [
             {
                 path: "/",
-                element: <Body user = {{
-                    name: "Ramyaa",
-                    email: "dramyaa307@gmail.com",
-                }}/>,
+                element: <Body/>,
             },
             {
                 path: "/about",
@@ -99,6 +110,10 @@ import store from "./utils.js/store";
                     <Instamart/>
                 //</Suspense>
             },
+            {
+                path: "/cart",
+                element: <Cart/>
+            }
         ],
     },
     ]);
