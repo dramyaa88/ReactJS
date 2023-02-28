@@ -2,7 +2,6 @@
   "name": "reactjs",
   "version": "1.0.0",
   "description": "practise session",
-  "main": "App.js",
   "scripts": {
     "test": "jest",
     "start": "parcel index.html ",
