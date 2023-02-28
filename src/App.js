@@ -25,11 +25,13 @@ import About from "./Component/About";
 import ErrorElement from "./Component/ErrorElement";
 import RestaurantPage from "./Component/RestaurantPage";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Instamart from "./Component/Instamart";
+//import Instamart from "./Component/Instamart";
 import { Provider } from "react-redux";
 import store from "./utils.js/store";
 import Cart from "./Component/Cart1";
 import { UserContext } from "./utils.js/UserContext";
+import Shimmmer from "./Component/Shimmer";
+const Instamart = lazy(() => import("./Component/Instamart"));
 
 
 
@@ -75,7 +77,10 @@ import { UserContext } from "./utils.js/UserContext";
             },
             {
                 path: "/instamart",
-                element: <Instamart />
+                element: (
+                <Suspense fallback={<Shimmmer />}>
+                    <Instamart />
+                </Suspense>)
             },
             
             {
