@@ -18,58 +18,39 @@
 
 import React, { Children, lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
-import { Header } from "./Component/Header";
+import { Header } from "./Component/HeaderF";
 import { Body } from "./Component/Body";
 import { Footer } from "./Component/Footer";
 import About from "./Component/About";
-import Contact from "./Component/Contact";
 import ErrorElement from "./Component/ErrorElement";
-import RestaurantMenu from "./Component/RestaurantMenu";
+import RestaurantPage from "./Component/RestaurantPage";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Profile from "./Component/Profile";
-import Shimmmer from "./Component/Shimmer";
 import Instamart from "./Component/Instamart";
-import UserContext from "./utils.js/UserContext";
 import { Provider } from "react-redux";
 import store from "./utils.js/store";
-import Cart from "./Component/Cart";
+import Cart from "./Component/Cart1";
+import { UserContext } from "./utils.js/UserContext";
 
 
-//const Instamart = lazy(() =>import("./Component/instamart") )
 
-    //Component Composition - calling Func. comp. inside func. comp.
     const AppLayout = () => {
-
-        const [modifiedUser, setModifiedUser] = useState({
+        const [user, setUser] = useState({
             name: "Ramyaa",
             email: "ramyaa123@gmail.com",
-        });
-
-        const [modifiedUser2, setModifiedUser2] = useState({
-            name: "Ramyaa Dhanasekaran",
-            email: "dramyaa307@gmail.com",
-        });
-        
+          });
 
         return (
-            <Provider store ={store}>
-            <UserContext.Provider 
+            <Provider store={store}>
+            <UserContext.Provider
                 value={{
-                    user:modifiedUser,
+                user: user,
+                setUser: setUser,
                 }}
             >
-            <Header/>
-            <Outlet />
+                <Header />
+                <Outlet />
+                <Footer />
             </UserContext.Provider>
-            <UserContext.Provider 
-                value ={{
-                    user:modifiedUser2
-                }}
-            >
-                 <Footer />
-            </UserContext.Provider>
-           
-            
             </Provider>
         )
     }
@@ -86,30 +67,17 @@ import Cart from "./Component/Cart";
             },
             {
                 path: "/about",
-                element: <About/>,
-                children: [
-                    {
-                        path: "profile",
-                        element: <Profile/>,
-                    },
-                ], 
-            },
-            {
-
-                path: "/contact",
-                element: <Contact/>
+                element: <About/>, 
             },
             {
                 path: "/restaurant/:resId",
-                element: <RestaurantMenu />
+                element: <RestaurantPage />
             },
             {
                 path: "/instamart",
-                element: 
-                //<Suspense fallback = {<Shimmmer/>}>
-                    <Instamart/>
-                //</Suspense>
+                element: <Instamart />
             },
+            
             {
                 path: "/cart",
                 element: <Cart/>

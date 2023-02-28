@@ -1,8 +1,5 @@
-import {Outlet} from "react-router-dom";
-import Profile from "./ProfileClass";
-import ProfileFunction from "./Profile";
 import React from "react";
-import UserContext from "../utils.js/UserContext";
+import {ABOUT_US} from "../Constants";
 
 
 class About extends React.Component{
@@ -19,20 +16,20 @@ class About extends React.Component{
     render(){
         //console.log("Parent - render");
 
-        <UserContext.Consumer>
-            {({user}) => {
-                <h1 className="font-bold p-2">{user.name} - {user.email}</h1>
-            }}
-        </UserContext.Consumer>
+        
 
         return (
-            <div>
-            <h1>About Us</h1>
-            <p>Get food delivery to your doorstep from thousands of amazing local and national restaurants. Find the meal you crave and order food from restaurants easily</p>
-            
-            <Profile name={" First Child"}/>
-            
+            <>
+            <div class="font-bold  tracking-wide px-36 ">
+                <h1 class="text-3xl pt-6 pb-4">AboutUs</h1>
+                <h3 class="text-xl ">Created using Class based components</h3>
             </div>
+            <div class="pt-10 pb-28 text-[18px] tracking-wide font-[100] px-36">
+                <h1>{ABOUT_US}</h1>                
+            </div>
+
+            
+            </>
         )
     }
 }

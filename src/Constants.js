@@ -1,7 +1,46 @@
 
 export const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
-
+export const CITY_NAMES =['Delhi', 'Mumbai', ,'Bangalore', 'Kolkata', 'Hyderabad', 'Ahmedabad', 'Chennai', 'Pune', 'Jaipur',"Jammu", 'Surat','Srinagar',              'Lucknow', 'Nagpur', 'Visakhapatnam', 'Bhopal', 'Patna', 'Ludhiana', 'Agra', 'Nashik', 'Vadodara', 'Ghaziabad',              'Rajkot', 'Meerut', 'Amritsar', 'Varanasi', 'Aurangabad', 'Jabalpur', 'Gwalior', 'Vijayawada', 'Jodhpur','Mount Tabu','Patna','Bihar','Kanpur']
 export const FETCH_MENU_URL = "https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=";
+export const ABOUT_US = "Get food delivery to your doorstep from thousands of amazing local and national restaurants. Find the meal you crave and order food from restaurants easily.           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+export const Popular_Cuisines = [
+  {
+    id: "600608",
+    imageId: "rng/md/carousel/production/lbtzwnwla1pam1np4jtg",
+  },
+  {
+    id: "600813",
+    imageId: "rng/md/carousel/production/kmvbd3hyswd147u4qdn1",
+  },
+  {
+    id: "600833",
+    imageId: "rng/md/carousel/production/hvc4l0r0bgrtl6vdbbzv",
+  },
+  {
+    id: "600868",
+    imageId: "rng/md/carousel/production/oea45ipb1ctr4m61m7af",
+  },
+  {
+    id: "600828",
+    imageId: "rng/md/carousel/production/iwvt76wvh3a7dxmkljxd",
+  },
+  {
+    id: "600901",
+    imageId: "rng/md/carousel/production/vntl1lutut9bqsxjninx",
+  },
+  {
+    id: "600916",
+    imageId: "rng/md/carousel/production/wfzaxacltlxyi4shmm2u",
+  },
+  {
+    id: "600932",
+    imageId: "rng/md/carousel/production/hk7gdfeiwmy5nx6prv97",
+  },
+  {
+    id: "601037",
+    imageId: "rng/md/carousel/production/pa6ydsixfemhr7r9rjzc",
+  },
+];
 
 export const restaurantList =[
     {
