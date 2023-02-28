@@ -29,5 +29,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.1"
   },
-  "browserslist": []
+  "browserslist": [
+    "last 10 Chrome versions"
+  ]
 }
