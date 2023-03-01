@@ -2,20 +2,19 @@ import CartItem from "./CartItem";
 import { IMG_CDN_URL } from "../Constants";
 import EmptyCart from "./EmptyCart";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
- 
   let totalAmount = 0;
 
-  const cartItems = useSelector(store => store.cart.items);
+  const cartItems = useSelector((store) => store.cart.items);
   console.log(cartItems);
 
   cartItems.map((item) => {
-    if(item?.dish?.price !== 0){
-    totalAmount += (item?.dish?.price * item?.qty) / 100;
-    }
-    else{
-      totalAmount += (100 * item?.qty);
+    if (item?.dish?.price == 100) {
+      totalAmount += item?.dish?.price * item?.qty;
+    } else {
+      totalAmount += (item?.dish?.price * item?.qty) / 100;
     }
   });
 
@@ -100,9 +99,11 @@ const Cart = () => {
             </div>
           </div>
           <div className="Place-Order w-[1125px]    p-4">
-            <button className="w-full p-4 bg-[#60b246] rounded-sm text-white text-[20px]">
-              Place Order
-            </button>
+            <Link to="/thank-you">
+              <button className="w-full p-4 bg-[#60b246] rounded-sm text-white text-[20px]">
+                Place Order
+              </button>
+            </Link>
           </div>
         </div>
       </div>
